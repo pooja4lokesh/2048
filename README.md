@@ -5,7 +5,7 @@ Require nodejs version 6.14
 Editor Used VS Code
 ----------------------------------
 
-In the project directory "Technical Challenge 2048\2048"
+In the project directory "Technical Challenge 2048-main\2048"
 # Install dependencies#
    
     -  npm install clone-deep
