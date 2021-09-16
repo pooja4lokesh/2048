@@ -1,0 +1,22 @@
+button  {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+    background-image: linear-gradient(rgb(184, 110, 147), rgb(135, 167, 48));
+    
+  }
+
+  .game-explanation {
+    height: 50;
+    width: 50;
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+  }
+
+  .game {
+   height: 180;
+   width: 180;
+   text-shadow: 0 0 8px #FF0000, 0 0 10px #0000FF;
+   font-size: 35px;
+   padding-left: 200px;
+  }
