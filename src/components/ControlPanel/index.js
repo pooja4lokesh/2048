@@ -18,7 +18,7 @@ export default function ControlPanel() {
                 </p>
                 <p class="game-explanation">
                     <strong class="important">How to play:  </strong>
-                    <strong>Press arrow keys  </strong> to move the tiles.
+                    <strong>Press arrow keys to move the tiles.</strong>
                 </p>
                 <button type="button" class="btn btn-success btn-lg">New Game</button>
             </div>
