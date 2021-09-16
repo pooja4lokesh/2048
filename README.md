@@ -20,7 +20,7 @@ Editor Used VS Code
 -  cd 2048
 ```
 
-3. Install dependencies
+3. In VS Code Install dependencies
 
 ```bash
 -  npm install clone-deep
