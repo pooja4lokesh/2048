@@ -1,15 +1,15 @@
-import img2 from '../images/2.gif';
-import img4 from '../images/4.gif';
-import img8 from '../images/8.gif';
-import img16 from '../images/16.gif';
-import img32 from '../images/32.gif';
-import img64 from '../images/64.gif';
-import img128 from '../images/128.gif';
-import img256 from '../images/256.gif';
-import img512 from '../images/512.gif';
-import img1024 from '../images/1024.gif';
-import img2048 from '../images/2048.gif';
-import imgbackground from '../images/tileBackground.jpeg';
+import img2 from '../Images/2.gif';
+import img4 from '../Images/4.gif';
+import img8 from '../Images/8.gif';
+import img16 from '../Images/16.gif';
+import img32 from '../Images/32.gif';
+import img64 from '../Images/64.gif';
+import img128 from '../Images/128.gif';
+import img256 from '../Images/256.gif';
+import img512 from '../Images/512.gif';
+import img1024 from '../Images/1024.gif';
+import img2048 from '../Images/2048.gif';
+import imgbackground from '../Images/tileBackground.jpeg';
 
 const getAnimatedImage = (num) => {
   switch (num) {
