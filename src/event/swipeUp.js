@@ -3,41 +3,42 @@ import cloneDeep from 'lodash.clonedeep';
 
 const swipeUp = ({ data }) => {
 
-  let b = cloneDeep(data);
-  let oldData = JSON.parse(JSON.stringify(data));
-  for (let i = 0; i < 4; i++) {
-    let slow = 0;
-    let fast = 1;
-    while (slow < 4) {
-      if (fast === 4) {
-        fast = slow + 1;
-        slow++;
+  let grid_data = cloneDeep(data);
+  let old_grid_data = JSON.parse(JSON.stringify(data));
+
+  for (let counter = 0; counter < 4; counter++) {
+    let selected_index = 0;
+    let neigh_index = 1;
+    while (selected_index < 4) {
+      if (neigh_index === 4) {
+        neigh_index = selected_index + 1;
+        selected_index++;
         continue;
       }
-      if (b[slow][i] === 0 && b[fast][i] === 0) {
-        fast++;
-      } else if (b[slow][i] === 0 && b[fast][i] !== 0) {
-        b[slow][i] = b[fast][i];
-        b[fast][i] = 0;
-        fast++;
-      } else if (b[slow][i] !== 0 && b[fast][i] === 0) {
-        fast++;
-      } else if (b[slow][i] !== 0 && b[fast][i] !== 0) {
-        if (b[slow][i] === b[fast][i]) {
-          b[slow][i] = b[slow][i] + b[fast][i];
-          b[fast][i] = 0;
-          fast = slow + 1;
-          slow++;
+      if (grid_data[selected_index][counter] === 0 && grid_data[neigh_index][counter] === 0) {
+        neigh_index++;
+      } else if (grid_data[selected_index][counter] === 0 && grid_data[neigh_index][counter] !== 0) {
+        grid_data[selected_index][counter] = grid_data[neigh_index][counter];
+        grid_data[neigh_index][counter] = 0;
+        neigh_index++;
+      } else if (grid_data[selected_index][counter] !== 0 && grid_data[neigh_index][counter] === 0) {
+        neigh_index++;
+      } else if (grid_data[selected_index][counter] !== 0 && grid_data[neigh_index][counter] !== 0) {
+        if (grid_data[selected_index][counter] === grid_data[neigh_index][counter]) {
+          grid_data[selected_index][counter] = grid_data[selected_index][counter] + grid_data[neigh_index][counter];
+          grid_data[neigh_index][counter] = 0;
+          neigh_index = selected_index + 1;
+          selected_index++;
         } else {
-          slow++;
-          fast = slow + 1;
+          selected_index++;
+          neigh_index = selected_index + 1;
         }
       }
     }
   }
-  if (JSON.stringify(oldData) !== JSON.stringify(b)) {
-    addNewRandomNumber(b);
+  if (JSON.stringify(old_grid_data) !== JSON.stringify(grid_data)) {
+    addNewRandomNumber(grid_data);
   }
-  return (b);
+  return (grid_data);
 };
 export default swipeUp;
